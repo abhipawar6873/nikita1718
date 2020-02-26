@@ -1,0 +1,6 @@
+Flask
+Flask-User
+peewee
+Flask-Login
+flask_httpauth
+requests

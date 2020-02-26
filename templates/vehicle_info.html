@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="column is-4 is-offset-4">
+    <h3 class="title">Vehicle {{ vehicle_number }} Recent Location</h3>
+    <div class="box">
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <div class="notification is-info">
+                    {{ messages[0] }}
+                </div>
+            {% endif %}
+        {% endwith %}
+
+    <iframe 
+      width="300" 
+      height="170" 
+      frameborder="0" 
+      scrolling="no" 
+      marginheight="0" 
+      marginwidth="0" 
+      src="https://maps.google.com/maps?q={{ data[0].latitude }},{{ data[0].longitude }}&hl=es&z=14&amp;output=embed">
+    </iframe>
+    <br />
+    <small>
+       <a 
+        href="https://maps.google.com/maps?q={{ data[0].latitude }},{{ data[0].longitude }}&hl=es;z=14&amp;output=embed" 
+        style="color:#0000FF;text-align:left" 
+        target="_blank"
+       >
+     See map bigger
+   </a>
+   </small>
+
+    </div>
+</div>
+{% endblock %}
+

@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="column is-4 is-offset-4">
+    <h3 class="title">Fuel Filling History for vehicle {{ vehicle_number }}</h3>
+    <div class="box">
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <div class="notification is-info">
+                    {{ messages[0] }}
+                </div>
+            {% endif %}
+        {% endwith %}
+
+<table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
+  <thead>
+    <tr>
+      <th><abbr title="Date">Date</abbr></th>
+      <th>Quantity</th>
+    </tr>
+  </thead>
+  <tfoot>
+    <tr>
+      <th><abbr title="Date">Date</abbr></th>
+      <th>Quantity</th>
+    </tr>
+  </tfoot>
+  <tbody>
+  {% for d in data %}
+    <tr>
+      <td>{{ d.date }}</td>
+      <td>{{ d.quantity }}</td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+
+    </div>
+</div>
+{% endblock %}
+
