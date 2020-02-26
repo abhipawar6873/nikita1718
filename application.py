@@ -14,7 +14,7 @@ def load_user(id):
         return User.get(int(id)) 
 
 db.create_tables([User, FuelInfo, VehicleInfo])
-#u=User(username="sachin", password="sachin", role="admin", email_address="d@gmail.com",vehicle_number="123", phone_number="sads")
+#u=User(username="admin", password="admin", role="admin", email_address="d@gmail.com",vehicle_number="123", phone_number="sads")
 #u.save()
 
 @app.route("/test")
