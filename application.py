@@ -4,7 +4,7 @@ from flask_login import LoginManager
 from app_models import *
 import requests
 
-app = Flask("Smart Fuel Meter")
+app = Flask("Fuel Tracking System")
 login = LoginManager(app)
 app.config['SESSION_TYPE'] = 'memcache'
 app.secret_key = "super secret key"
